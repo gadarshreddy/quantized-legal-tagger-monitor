@@ -1,15 +1,35 @@
-"""Command-line entry point: `python -m app.cli --help`."""
+﻿"""Command-line interface for the legal tagger monitor."""
 import argparse
+from app import core
 
 
-def main(argv: list[str] | None = None) -> None:
-    parser = argparse.ArgumentParser(prog="quantized-legal-tagger-monitor", description="Legal aid workers use this to evaluate the size and inference speed of a quantized legal clause tagger, ensuring efficient document processing on local systems.")
+def main(argv=None):
+    parser = argparse.ArgumentParser(
+        description="Quantized Legal Tagger Monitor")
     sub = parser.add_subparsers(dest="command", required=True)
-    sub.add_parser("hello", help="check that everything is wired up")
-    # TODO: add your own commands here as you work through the milestones.
+
+    sub.add_parser("hello")
+    for i in range(1, 7):
+        sub.add_parser(f"milestone{i}")
+
     args = parser.parse_args(argv)
+
     if args.command == "hello":
-        print("Quantized Legal Tagger Monitor is ready. Open README.md for your milestones.")
+        print("Quantized Legal Tagger Monitor is ready.")
+        return
+
+    functions = {
+        "milestone1": core.milestone_1,
+        "milestone2": core.milestone_2,
+        "milestone3": core.milestone_3,
+        "milestone4": core.milestone_4,
+        "milestone5": core.milestone_5,
+        "milestone6": core.milestone_6,
+    }
+    result = functions[args.command]()
+    if args.command != "milestone6":
+        import json
+        print(json.dumps(result, indent=2))
 
 
 if __name__ == "__main__":

@@ -1,0 +1,6 @@
+{
+  "evaluation": "majority-label baseline, not GPT-2",
+  "records": 5,
+  "majority_label": "Termination",
+  "accuracy": 0.4
+}

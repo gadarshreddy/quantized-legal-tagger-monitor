@@ -1,0 +1,5 @@
+{
+  "dynamic_quantization": "not_run",
+  "static_quantization": "not_run",
+  "reason": "GPT-2 checkpoint and PyTorch are not installed."
+}

@@ -1,0 +1,6 @@
+{
+  "base_model": "gpt2",
+  "method": "classification as generation",
+  "status": "not_trained",
+  "reason": "Install torch, transformers and datasets to run fine-tuning."
+}
