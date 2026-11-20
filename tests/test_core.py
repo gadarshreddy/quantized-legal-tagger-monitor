@@ -1,41 +1,39 @@
-"""Your tests. Each milestone in README.md gets one here: write the test first, then make it pass.
+﻿from app import core
 
-They start skipped. Remove the `skip` line as you work on each milestone.
-"""
-import pytest
 
-# Milestone 1: Prepare a subset of the LEDGAR dataset for legal clause tagging.
-@pytest.mark.skip(reason="remove this line when you start milestone 1")
 def test_milestone_1():
-    raise NotImplementedError("write the test for milestone 1")
+    result = core.milestone_1()
+    assert result["records"] == 5
+    assert len(result["labels"]) == 4
 
 
-# Milestone 2: Fine-tune a GPT-2 model to tag legal clauses using the classification as generation approach.
-@pytest.mark.skip(reason="remove this line when you start milestone 2")
 def test_milestone_2():
-    raise NotImplementedError("write the test for milestone 2")
+    result = core.milestone_2()
+    assert result["base_model"] == "gpt2"
+    assert result["status"] == "not_trained"
 
 
-# Milestone 3: Evaluate the tagging accuracy of the fine-tuned model.
-@pytest.mark.skip(reason="remove this line when you start milestone 3")
 def test_milestone_3():
-    raise NotImplementedError("write the test for milestone 3")
+    result = core.milestone_3()
+    assert result["accuracy"] == 0.4
+    assert result["records"] == 5
 
 
-# Milestone 4: Apply dynamic and static post-training quantization to the trained model.
-@pytest.mark.skip(reason="remove this line when you start milestone 4")
 def test_milestone_4():
-    raise NotImplementedError("write the test for milestone 4")
+    result = core.milestone_4()
+    assert result["dynamic_quantization"] == "not_run"
+    assert result["static_quantization"] == "not_run"
 
 
-# Milestone 5: Compare the original and quantized model sizes and measure simulated inference times.
-@pytest.mark.skip(reason="remove this line when you start milestone 5")
 def test_milestone_5():
-    raise NotImplementedError("write the test for milestone 5")
+    result = core.milestone_5()
+    assert result["dataset_records"] == 5
+    assert result["loading_time_ms"] >= 0
 
 
-# Milestone 6: Present a dashboard-like output of model efficiency metrics.
-@pytest.mark.skip(reason="remove this line when you start milestone 6")
-def test_milestone_6():
-    raise NotImplementedError("write the test for milestone 6")
-
+def test_milestone_6(capsys):
+    result = core.milestone_6()
+    assert "baseline" in result
+    assert "efficiency" in result
+    assert "quantization" in result
+    assert '"accuracy": 0.4' in capsys.readouterr().out
