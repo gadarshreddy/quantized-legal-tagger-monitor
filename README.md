@@ -1,6 +1,6 @@
 # Quantized Legal Tagger Monitor
 
-[![Built with askThili](https://ask.thili.ai/api/v1/public/projects/bn32yzz366/badge.svg)](https://ask.thili.ai/b/bn32yzz366)
+[![Built with askThili](https://msrit.ask.thili.ai/api/v1/public/projects/bn32yzz366/badge.svg)](https://msrit.ask.thili.ai/b/bn32yzz366)
 
 This project, the Quantized Legal Tagger Monitor, helps legal aid workers evaluate the efficiency of a legal clause tagger. You will fine-tune a GPT-2 model to tag legal clauses, then apply quantization to reduce its size and improve inference speed. The final output will be a dashboard-like display comparing the original and quantized models' performance.
 
@@ -14,17 +14,17 @@ This project, the Quantized Legal Tagger Monitor, helps legal aid workers evalua
 
 Tick these off as you go, and commit after each one.
 
-- [ ] **1. Prepare a subset of the LEDGAR dataset for legal clause tagging.**  
+- [x] **1. Prepare a subset of the LEDGAR dataset for legal clause tagging.**  
       Hint: Data preparation.
 - [ ] **2. Fine-tune a GPT-2 model to tag legal clauses using the classification as generation approach.**  
       Hint: Use the `Fine-Tune GPT-2 to Tag Legal Contract Clauses` technique.
-- [ ] **3. Evaluate the tagging accuracy of the fine-tuned model.**  
+- [x] **3. Evaluate the tagging accuracy of the fine-tuned model.**  
       Hint: Evaluate model performance.
 - [ ] **4. Apply dynamic and static post-training quantization to the trained model.**  
       Hint: Apply the `Shrink a Neural Network with Quantisation` technique.
-- [ ] **5. Compare the original and quantized model sizes and measure simulated inference times.**  
+- [x] **5. Compare the original and quantized model sizes and measure simulated inference times.**  
       Hint: Compare model size and simulated inference speed.
-- [ ] **6. Present a dashboard-like output of model efficiency metrics.**  
+- [x] **6. Present a dashboard-like output of model efficiency metrics.**  
       Hint: Visualize efficiency metrics.
 
 ## Run it
